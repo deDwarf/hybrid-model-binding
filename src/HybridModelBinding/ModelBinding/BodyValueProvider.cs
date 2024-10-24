@@ -1,6 +1,6 @@
 ﻿using HybridModelBinding.Extensions;
 using Microsoft.AspNetCore.Http;
-#if (NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1)
+#if (NETSTANDARD)
 using Microsoft.AspNetCore.Mvc.Internal;
 #endif
 using Microsoft.AspNetCore.Mvc.ModelBinding;
