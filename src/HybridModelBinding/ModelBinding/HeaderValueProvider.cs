@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
+#if NETSTANDARD2_1_OR_GREATER
 using Microsoft.AspNetCore.Mvc.Internal;
+#endif
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System;
 using System.Collections.Generic;

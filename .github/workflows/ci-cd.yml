@@ -27,12 +27,12 @@ jobs:
           dotnet-version: '3.1.100'
 
       - name: Build project
-        run: dotnet build -c Release -f netstandard2.1 -o bin/ src/HybridModelBinding
+        run: dotnet build -c Release src/HybridModelBinding
 
       - name: Create NuGet-package
         if: steps.needs_packaging.outputs.value == 'true'
-        run: dotnet pack --no-build -p:OutputPath=../../bin/ src/HybridModelBinding
+        run: dotnet pack --no-build src/HybridModelBinding
 
       - name: Publish NuGet-package
         if: steps.needs_packaging.outputs.value == 'true'
-        run: dotnet nuget push -s https://api.nuget.org/v3/index.json -k ${{secrets.NUGET_TOKEN}} -n true bin\*.nupkg
+        run: dotnet nuget push -s https://api.nuget.org/v3/index.json -k ${{secrets.NUGET_TOKEN}} -n true src/HybridModelBinding/bin/*.nupkg
