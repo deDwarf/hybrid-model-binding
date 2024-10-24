@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
-#if (NETSTANDARD)
+#if NETSTANDARD
 using Microsoft.AspNetCore.Mvc.Internal;
 #endif
 using Microsoft.AspNetCore.Mvc.ModelBinding;
